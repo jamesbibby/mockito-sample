@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+
+// tag::repositories[]
+repositories {
+    mavenCentral()
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+    baseName = 'mock-testing-sample'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+dependencies {
+    testCompile "junit:junit:4.12"
+    testCompile "org.mockito:mockito-core:2.0.8-beta"
+}
+// end::dependencies[]
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
+// end::wrapper[]
