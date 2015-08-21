@@ -29,10 +29,6 @@ public class SimpleOrderWeightCalculatorTest {
 		// order
 		assertEquals(0.0, calculator.calculateOrderWeight(order), 0);
 
-		// verify that it did indeed check the order items but did nothing else,
-		// it should not need to
-		verify(order).getOrderItems();
-		verifyNoMoreInteractions(order);
 	}
 
 	@Test
@@ -56,17 +52,6 @@ public class SimpleOrderWeightCalculatorTest {
 
 		// ensure the calculator accurately returns a zero weight for an empty order
 		assertEquals(5.0, calculator.calculateOrderWeight(order), 0);
-
-		// verify that it did indeed check the order items but did nothing else, it should not need to
-		verify(order).getOrderItems();
-		verifyNoMoreInteractions(order);
-		
-		//verify that both the quantity and weight were used in the calculation.   
-		// Not multiplying by quantity is a common bug here
-		verify(item).getQuantity();
-		verify(item).getWeight();
-		verifyNoMoreInteractions(item); //this is very prescriptive, and maybe overkill
-		
 
 	}
 
@@ -95,17 +80,7 @@ public class SimpleOrderWeightCalculatorTest {
 
 		// ensure the calculator accurately returns a zero weight for an empty order
 		assertEquals(5000.0, calculator.calculateOrderWeight(order), 0);
-
-		// verify that it did indeed check the order items but did nothing else, it should not need to
-		verify(order).getOrderItems();
-		verifyNoMoreInteractions(order);
 		
-		//verify that both the quantity and weight were used in the calculation.   
-		// Not multiplying by quantity is a common bug here
-		verify(item, times(1000)).getQuantity();
-		verify(item, times(1000)).getWeight();
-		verifyNoMoreInteractions(item); //this is very prescriptive, and maybe overkill
-				
 	}
 
 }
