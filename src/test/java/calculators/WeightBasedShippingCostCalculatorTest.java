@@ -21,7 +21,6 @@ public class WeightBasedShippingCostCalculatorTest {
 		WeightBasedShippingCostCalculator shippingCalculator = new WeightBasedShippingCostCalculator();
 		shippingCalculator.setOrderWeightCalculator(orderWeightCalculator);
 		assertEquals(0.0, shippingCalculator.calculateShippingCost(order), 0.0);
-		
 	}
 	
 	@Test
@@ -35,8 +34,7 @@ public class WeightBasedShippingCostCalculatorTest {
 			// create the shipping calculator
 			WeightBasedShippingCostCalculator shippingCalculator = new WeightBasedShippingCostCalculator();
 			shippingCalculator.setOrderWeightCalculator(orderWeightCalculator);
-			assertEquals(12.99, shippingCalculator.calculateShippingCost(order), 0.0);
-			
+			assertEquals(12.99, shippingCalculator.calculateShippingCost(order), 0.0);	
 	}
 	
 }

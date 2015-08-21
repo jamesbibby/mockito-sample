@@ -28,7 +28,6 @@ public class SimpleOrderWeightCalculatorTest {
 		// ensure the calculator accurately returns a zero weight for an empty
 		// order
 		assertEquals(0.0, calculator.calculateOrderWeight(order), 0);
-
 	}
 
 	@Test
@@ -52,7 +51,6 @@ public class SimpleOrderWeightCalculatorTest {
 
 		// ensure the calculator accurately returns a zero weight for an empty order
 		assertEquals(5.0, calculator.calculateOrderWeight(order), 0);
-
 	}
 
 	@Test
@@ -80,7 +78,6 @@ public class SimpleOrderWeightCalculatorTest {
 
 		// ensure the calculator accurately returns a zero weight for an empty order
 		assertEquals(5000.0, calculator.calculateOrderWeight(order), 0);
-		
 	}
 
 }
