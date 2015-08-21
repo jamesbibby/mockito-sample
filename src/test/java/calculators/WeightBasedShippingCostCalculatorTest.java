@@ -22,13 +22,6 @@ public class WeightBasedShippingCostCalculatorTest {
 		shippingCalculator.setOrderWeightCalculator(orderWeightCalculator);
 		assertEquals(0.0, shippingCalculator.calculateShippingCost(order), 0.0);
 		
-		//verify that the weight calculator was called with the order
-		verify(orderWeightCalculator).calculateOrderWeight(order);
-		verifyNoMoreInteractions(orderWeightCalculator);
-		
-		//the order should not have any calls, otherwise the mock is not being used
-		verifyNoMoreInteractions(order);
-		
 	}
 	
 	@Test
@@ -44,12 +37,6 @@ public class WeightBasedShippingCostCalculatorTest {
 			shippingCalculator.setOrderWeightCalculator(orderWeightCalculator);
 			assertEquals(12.99, shippingCalculator.calculateShippingCost(order), 0.0);
 			
-			//verify that the weight calculator was called with the order
-			verify(orderWeightCalculator).calculateOrderWeight(order);
-			verifyNoMoreInteractions(orderWeightCalculator);
-			
-			//the order should not have any calls, otherwise the mock is not being used
-			verifyNoMoreInteractions(order);
 	}
 	
 }
